@@ -13,6 +13,9 @@ public struct WhatsNew {
     /// The Title
     public var title: Title
     
+    // Optional Image
+    public var displayImage: DisplayImage?
+    
     /// The Features
     public var features: [Feature]
     
@@ -34,12 +37,14 @@ public struct WhatsNew {
     public init(
         version: Version = .current(),
         title: Title,
+        displayImage: DisplayImage? = nil,
         features: [Feature],
         primaryAction: PrimaryAction = .init(),
         secondaryAction: SecondaryAction? = nil
     ) {
         self.version = version
         self.title = title
+        self.displayImage = displayImage
         self.features = features
         self.primaryAction = primaryAction
         self.secondaryAction = secondaryAction

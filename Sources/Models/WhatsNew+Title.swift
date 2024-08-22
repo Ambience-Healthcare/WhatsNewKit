@@ -31,6 +31,14 @@ public extension WhatsNew {
         
     }
     
+    struct DisplayImage {
+        public var image: Image
+        
+        public init(displayImage: Image) {
+            self.image = displayImage
+        }
+    }
+    
 }
 
 // MARK: - ExpressibleByStringLiteral

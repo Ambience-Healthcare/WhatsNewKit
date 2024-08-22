@@ -91,6 +91,7 @@ private extension WhatsNew.Example {
         case .calendar:
             return .init(
                 title: "What's New in Calendar",
+                displayImage: .init(displayImage: Image("Swipe", bundle: nil)),
                 features: [
                     .init(
                         image: .init(

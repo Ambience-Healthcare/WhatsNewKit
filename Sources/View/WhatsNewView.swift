@@ -59,6 +59,17 @@ extension WhatsNewView: View {
                 VStack(
                     spacing: self.layout.contentSpacing
                 ) {
+                    // Display Image
+                    if let image = self.whatsNew.displayImage?.image {
+                        HStack {
+                            Spacer()
+                            image
+                                .resizable()
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fit)
+                            Spacer()
+                        }
+                    }
                     // Title
                     self.title
                     // Feature List
@@ -66,6 +77,7 @@ extension WhatsNewView: View {
                         alignment: .leading,
                         spacing: self.layout.featureListSpacing
                     ) {
+
                         // Feature
                         ForEach(
                             self.whatsNew.features,
@@ -127,8 +139,8 @@ private extension WhatsNewView {
         Text(
             whatsNewText: self.whatsNew.title.text
         )
-        .font(.largeTitle.bold())
-        .multilineTextAlignment(.center)
+        .font(.title.bold())
+        .multilineTextAlignment(.leading)
         .fixedSize(horizontal: false, vertical: true)
     }
     
